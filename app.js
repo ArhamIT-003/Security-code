@@ -64,8 +64,9 @@ app.post("/login", (req, res)=>{
     } else{
       if(found){
         bcrypt.compare(password, found.password, function(err, result) {
-    // if (result == true){
+      if (result == true){
       res.render("secrets");
+    }
         });
       }
     }
